@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moc Hasła</title>
+    <link rel="stylesheet" href="haslo.css">
+</head>
+<body>
+<div id="site">
+    <h1>Moc Hasła</h1>
+    <form id="form">
+        PodajHasło <input type="password" id="area">
+    </form>
+    <input type="submit" id="button" value="Sprawdź moc hasła">
+
+    <div id="result">
+    </div>
+
+</div>
+<script>
+    document.getElementById("button").addEventListener("click", check);
+
+    function check() {
+        var psswrd = document.getElementById("area").value;
+        var reg1 = /\d/;
+
+        if (liczba.length == 0) {
+            document.getElementById("result").innerHTML = "Wpisz Hasło";
+        } else if ((psswrd.length >= 7) && (reg1.test(psswrd))) {
+            document.getElementById("result").innerHTML = "Silne Hasło";
+        } else if ((psswrd.length < 7) && (psswrd.length >= 4) && (reg1.test(psswrd))) {
+            document.getElementById("result").innerHTML = "Średnie Hasło";
+        } else document.getElementById("result").innerHTML = "Słabe Hasło";
+    }
+</script>
+
+</body>
+</html>
